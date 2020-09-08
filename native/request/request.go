@@ -81,3 +81,18 @@ type Request struct {
 	Assets           []Asset         `json:"assets"`                   // An array of Asset Objects
 	Ext              json.RawMessage `json:"ext,omitempty"`
 }
+
+type RequestV12 struct {
+	Ver              string            `json:"ver,omitempty"`            // Version of the Native Markup
+	ContextTypeID    ContextTypeID     `json:"context,omitempty"`        // The context in which the ad appears
+	ContextSubTypeID ContextSubTypeID  `json:"contextsubtype,omitempty"` // A more detailed context in which the ad appears
+	PlacementTypeID  PlacementTypeID   `json:"plcmttype,omitempty"`      // The design/format/layout of the ad unit being offered
+	PlacementCount   int               `json:"plcmtcnt,omitempty"`       // The number of identical placements in this Layout
+	Sequence         int               `json:"seq,omitempty"`            // 0 for the first ad, 1 for the second ad, and so on
+	Assets           []Asset           `json:"assets"`                   // An array of Asset Objects
+	AUrlSupport      int               `json:"aurlsupport,omitempty"`
+	DUrlSupport      int               `json:"durlsupport,omitempty"`
+	EventTrackers    []EventTracker    `json:"eventtrackers,omitempty"`
+	Privacy          int               `json:"privacy,omitempty"`
+	Ext              openrtb.Extension `json:"ext,omitempty"`
+}
