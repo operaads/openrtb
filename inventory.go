@@ -3,7 +3,7 @@ package openrtb
 type Inventory struct {
 	ID            string     `json:"id,omitempty"` // ID on the exchange
 	Name          string     `json:"name,omitempty"`
-	Domain        string     `json:"domain,omitempty"`
+	Domain        string     `json:"domain"`
 	Cat           []string   `json:"cat,omitempty"`           // Array of IAB content categories
 	SectionCat    []string   `json:"sectioncat,omitempty"`    // Array of IAB content categories for subsection
 	PageCat       []string   `json:"pagecat,omitempty"`       // Array of IAB content categories for page

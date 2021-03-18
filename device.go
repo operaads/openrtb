@@ -6,8 +6,8 @@ package openrtb
 type Device struct {
 	UA         string    `json:"ua,omitempty"`             // User agent
 	Geo        *Geo      `json:"geo,omitempty"`            // Location of the device assumed to be the user’s current location
-	DNT        int       `json:"dnt,omitempty"`            // "1": Do not track
-	LMT        int       `json:"lmt,omitempty"`            // "1": Limit Ad Tracking
+	DNT        int       `json:"dnt"`                      // "1": Do not track
+	LMT        int       `json:"lmt"`                      // "1": Limit Ad Tracking
 	IP         string    `json:"ip,omitempty"`             // IPv4
 	IPv6       string    `json:"ipv6,omitempty"`           // IPv6
 	DeviceType int       `json:"devicetype,omitempty"`     // The general type of device.
