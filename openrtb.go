@@ -185,6 +185,24 @@ const (
 	NBRUnmatchedUser     = 8
 )
 
+const (
+	UserAgentTypeWeb = 1
+	UserAgentTypeIdfa = 2
+	UserAgentTypeAAId = 3
+	UserAgentTypeWAid = 4
+	UserAgentOtherMobileId = 5
+)
+
+type Uid struct {
+	Id string `json:"id,omitempty"`
+	AType int `json:"atype,omitempty"`
+}
+
+type Eid struct {
+	Source string `json:"source,omitempty"`
+	Uids   []Uid  `json:"uids,omitempty"`
+}
+
 /*************************************************************************
  * COMMON OBJECT STRUCTS
  *************************************************************************/
@@ -252,6 +270,7 @@ type User struct {
 	Geo        *Geo      `json:"geo,omitempty"`
 	Data       []Data    `json:"data,omitempty"`
 	Ext        Extension `json:"ext,omitempty"`
+	Eids       []Eid     `json:"eids,omitempty"`
 }
 
 // The data and segment objects together allow additional data about the user to be specified. This data
