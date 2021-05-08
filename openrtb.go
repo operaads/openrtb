@@ -186,16 +186,17 @@ const (
 )
 
 const (
-	UserAgentTypeWeb = 1
-	UserAgentTypeIdfa = 2
-	UserAgentTypeAAId = 3
-	UserAgentTypeWAid = 4
+	UserAgentTypeWeb       = 1
+	UserAgentTypeIdfa      = 2
+	UserAgentTypeAAId      = 3
+	UserAgentTypeWAid      = 4
 	UserAgentOtherMobileId = 5
 )
 
 type Uid struct {
-	Id string `json:"id,omitempty"`
-	AType int `json:"atype,omitempty"`
+	Id    string    `json:"id,omitempty"`
+	AType int       `json:"atype,omitempty"`
+	Ext   Extension `json:"ext,omitempty"`
 }
 
 type Eid struct {
