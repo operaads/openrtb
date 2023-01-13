@@ -25,14 +25,16 @@ type Impression struct {
 	Pmp               *Pmp           `json:"pmp,omitempty"`               // A reference to the PMP object containing any Deals eligible for the impression object.
 	DisplayManager    string         `json:"displaymanager,omitempty"`    // Name of ad mediation partner, SDK technology, etc
 	DisplayManagerVer string         `json:"displaymanagerver,omitempty"` // Version of the above
-	Instl             int            `json:"instl"`             // Interstitial, Default: 0 ("1": Interstitial, "0": Something else)
-	ClickBrowser      int            `json:"clickbrowser"`      //Indicates the type of browser opened upon clicking the creative in an app, where 0 = embedded, 1 = native. Note that the Safari View Controller in iOS 9.x devices is considered a native browser for purposes of this attribute.
-	TagID             string         `json:"tagid"`             // IDentifier for specific ad placement or ad tag
+	Instl             int            `json:"instl"`                       // Interstitial, Default: 0 ("1": Interstitial, "0": Something else)
+	ClickBrowser      int            `json:"clickbrowser"`                //Indicates the type of browser opened upon clicking the creative in an app, where 0 = embedded, 1 = native. Note that the Safari View Controller in iOS 9.x devices is considered a native browser for purposes of this attribute.
+	TagID             string         `json:"tagid"`                       // IDentifier for specific ad placement or ad tag
 	BidFloor          float64        `json:"bidfloor,omitempty"`          // Bid floor for this impression in CPM
 	BidFloorCurrency  string         `json:"bidfloorcur,omitempty"`       // Currency of bid floor
 	Secure            NumberOrString `json:"secure,omitempty"`            // Flag to indicate whether the impression requires secure HTTPS URL creative assets and markup.
 	Exp               int            `json:"exp,omitempty"`               // Advisory as to the number of seconds that may elapse between the auction and the actual impression.
 	IFrameBuster      []string       `json:"iframebuster,omitempty"`      // Array of names for supportediframe busters.
+	Rwdd              int            `json:"rwdd,omitempty"`              // Indicates whether the user receives a reward for viewing the ad, where 0 = no, 1 = yes.
+	Ssai              int            `json:"ssai,omitempty"`              // Indicates if server-side ad insertion (e.g., stitching an ad into an audio or video stream) is in use and the impact of this on asset and tracker retrieval, where 0 = status unknown, 1 = all clientside (i.e., not server-side), 2 = assets stitched server-side but tracking pixels fired client-side, 3 = all server-side.
 	Ext               Extension      `json:"ext,omitempty"`
 }
 

@@ -31,6 +31,8 @@ var _ = Describe("Impression", func() {
 					},
 				},
 			},
+			Rwdd: 1,
+			Ssai: 1,
 		}))
 	})
 
