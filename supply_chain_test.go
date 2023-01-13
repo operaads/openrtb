@@ -17,7 +17,7 @@ var _ = Describe("SupplyChain", func() {
 		Expect(subject).To(Equal(&SupplyChain{
 			Complete: 1,
 			Ver:      "1.0",
-			Nodes: []SupplyChainNode{
+			Nodes: []*SupplyChainNode{
 				{
 					Asi:    "exchange1.com",
 					Sid:    "1234",

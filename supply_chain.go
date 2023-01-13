@@ -1,10 +1,10 @@
 package openrtb
 
 type SupplyChain struct {
-	Complete int               `json:"complete,omitempty"` // Flag indicating whether the chain contains all nodes involved in the transaction leading back to the owner of the site, app or other medium of the inventory, where 0 = no, 1 = yes.
-	Nodes    []SupplyChainNode `json:"nodes,omitempty"`    // Array of SupplyChainNode objects in the order of the chain.
-	Ver      string            `json:"ver,omitempty"`      // Version of the supply chain specification in use, in the format of “major.minor”.
-	Ext      Extension         `json:"ext,omitempty"`
+	Complete int                `json:"complete,omitempty"` // Flag indicating whether the chain contains all nodes involved in the transaction leading back to the owner of the site, app or other medium of the inventory, where 0 = no, 1 = yes.
+	Nodes    []*SupplyChainNode `json:"nodes,omitempty"`    // Array of SupplyChainNode objects in the order of the chain.
+	Ver      string             `json:"ver,omitempty"`      // Version of the supply chain specification in use, in the format of “major.minor”.
+	Ext      Extension          `json:"ext,omitempty"`
 }
 
 type SupplyChainNode struct {
