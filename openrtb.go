@@ -222,7 +222,8 @@ type Eid struct {
 type ThirdParty struct {
 	ID     string    `json:"id,omitempty"`
 	Name   string    `json:"name,omitempty"`
-	Cat    []string  `json:"cat,omitempty"` // Array of IAB content categories
+	CatTax int       `json:"cattax,omitempty"` // The taxonomy in use.
+	Cat    []string  `json:"cat,omitempty"`    // Array of IAB content categories
 	Domain string    `json:"domain,omitempty"`
 	Ext    Extension `json:"ext,omitempty"`
 }

@@ -9,6 +9,7 @@
   "publisher": {
     "id": "8953",
     "name": "local.com",
-    "domain": "local.com"
+    "domain": "local.com",
+    "cattax": 1
   }
 }
