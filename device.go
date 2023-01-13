@@ -30,11 +30,11 @@ type Device struct {
 	MCCMNC     string     `json:"mccmnc,omitempty"`         // Mobile carrier as the concatenated MCC-MNC code (e.g., "310-005" identifies Verizon Wireless CDMA in the USA).
 	ConnType   int        `json:"connectiontype,omitempty"` // Network connection type.
 	IFA        string     `json:"ifa,omitempty"`            // Native identifier for advertisers
-	IDSHA1     string     `json:"didsha1,omitempty"`        // SHA1 hashed device ID
-	IDMD5      string     `json:"didmd5,omitempty"`         // MD5 hashed device ID
-	PIDSHA1    string     `json:"dpidsha1,omitempty"`       // SHA1 hashed platform device ID
-	PIDMD5     string     `json:"dpidmd5,omitempty"`        // MD5 hashed platform device ID
-	MacSHA1    string     `json:"macsha1,omitempty"`        // SHA1 hashed device ID; IMEI when available, else MEID or ESN
-	MacMD5     string     `json:"macmd5,omitempty"`         // MD5 hashed device ID; IMEI when available, else MEID or ESN
+	IDSHA1     string     `json:"didsha1,omitempty"`        // DEPRECATED: SHA1 hashed device ID
+	IDMD5      string     `json:"didmd5,omitempty"`         // DEPRECATED: MD5 hashed device ID
+	PIDSHA1    string     `json:"dpidsha1,omitempty"`       // DEPRECATED: SHA1 hashed platform device ID
+	PIDMD5     string     `json:"dpidmd5,omitempty"`        // DEPRECATED: MD5 hashed platform device ID
+	MacSHA1    string     `json:"macsha1,omitempty"`        // DEPRECATED: SHA1 hashed device ID; IMEI when available, else MEID or ESN
+	MacMD5     string     `json:"macmd5,omitempty"`         // DEPRECATED: MD5 hashed device ID; IMEI when available, else MEID or ESN
 	Ext        Extension  `json:"ext,omitempty"`
 }

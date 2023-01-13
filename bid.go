@@ -32,7 +32,7 @@ type Bid struct {
 	Tactic         string         `json:"tactic,omitempty"`         // Tactic ID to enable buyers to label bids for reporting to the exchange the tactic through which their bid was submitted.
 	Cat            []string       `json:"cat,omitempty"`            // IAB content categories of the creative. Refer to List 5.1
 	Attr           []int          `json:"attr,omitempty"`           // Array of creative attributes.
-	API            int            `json:"api,omitempty"`            // API required by the markup if applicable
+	API            int            `json:"api,omitempty"`            // DEPRECATED: API required by the markup if applicable
 	Protocol       int            `json:"protocol,omitempty"`       // Video response protocol of the markup if applicable
 	QAGMediaRating int            `json:"qagmediarating,omitempty"` // Creative media rating per IQG guidelines.
 	Language       string         `json:"language,omitempty"`       // Language of the creative using ISO-639-1-alpha-2.

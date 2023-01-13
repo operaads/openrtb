@@ -29,7 +29,7 @@ type Video struct {
 	Skip           int      `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
 	SkipMin        int      `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
 	SkipAfter      int      `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
-	Sequence       int      `json:"sequence,omitempty"`       // Default: 1
+	Sequence       int      `json:"sequence,omitempty"`       // DEPRECATED: Default: 1
 	BAttr          []int    `json:"battr,omitempty"`          // Blocked creative attributes
 	MaxExtended    int      `json:"maxextended,omitempty"`    // Maximum extended video ad duration
 	MinBitrate     int      `json:"minbitrate,omitempty"`     // Minimum bit rate in Kbps

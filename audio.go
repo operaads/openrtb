@@ -17,7 +17,7 @@ type Audio struct {
 	MaxDuration   int      `json:"maxduration,omitempty"` // Maximum video ad duration in seconds
 	Protocols     []int    `json:"protocols,omitempty"`   // Video bid response protocols
 	StartDelay    int      `json:"startdelay,omitempty"`  // Indicates the start delay in seconds
-	Sequence      int      `json:"sequence,omitempty"`    // Default: 1
+	Sequence      int      `json:"sequence,omitempty"`    // DEPRECATED: Default: 1
 	BAttr         []int    `json:"battr,omitempty"`       // Blocked creative attributes
 	MaxExtended   int      `json:"maxextended,omitempty"` // Maximum extended video ad duration
 	MinBitrate    int      `json:"minbitrate,omitempty"`  // Minimum bit rate in Kbps
