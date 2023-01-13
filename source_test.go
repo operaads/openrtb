@@ -21,7 +21,7 @@ var _ = Describe("Source", func() {
 			SupplyChain: &SupplyChain{
 				Ver:      "1.0",
 				Complete: 1,
-				Nodes: []SupplyChainNode{
+				Nodes: []*SupplyChainNode{
 					{
 						Asi: "exchange1.com",
 						Sid: "1234",
