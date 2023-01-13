@@ -2,5 +2,16 @@
   "fd": 1,
   "tid": "transaction-id",
   "pchain": "payment-chain",
+  "schain" : {
+    "ver":"1.0",
+    "complete":1,
+    "nodes" : [
+      {
+        "asi":"exchange1.com",
+        "sid":"1234",
+        "hp":1
+      }
+    ]
+  },
   "ext": {}
 }
