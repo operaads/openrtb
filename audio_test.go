@@ -33,6 +33,12 @@ var _ = Describe("Audio", func() {
 			},
 			API:           []int{APIFrameworkVPAID1, APIFrameworkVPAID2},
 			CompanionType: []int{VASTCompanionStatic, VASTCompanionHTML},
+			PodID:         "pod_1",
+			PodSequence:   1,
+			SlotInPod:     1,
+			MaxSequence:   4,
+			PodDuration:   60,
+			MinCPMPerSec:  0.1,
 		}))
 	})
 

@@ -17,32 +17,42 @@ var (
 // The "video" object must be included directly in the impression object if the impression offered
 // for auction is an in-stream video ad opportunity.
 type Video struct {
-	Mimes          []string  `json:"mimes,omitempty"`          // Content MIME types supported.
-	MinDuration    int       `json:"minduration,omitempty"`    // Minimum video ad duration in seconds
-	MaxDuration    int       `json:"maxduration,omitempty"`    // Maximum video ad duration in seconds
-	Protocols      []int     `json:"protocols,omitempty"`      // Video bid response protocols
-	Protocol       int       `json:"protocol,omitempty"`       // Video bid response protocols DEPRECATED
-	W              int       `json:"w,omitempty"`              // Width of the player in pixels
-	H              int       `json:"h,omitempty"`              // Height of the player in pixels
-	StartDelay     int       `json:"startdelay,omitempty"`     // Indicates the start delay in seconds
-	Linearity      int       `json:"linearity,omitempty"`      // Indicates whether the ad impression is linear or non-linear
-	Skip           int       `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
-	SkipMin        int       `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
-	SkipAfter      int       `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
-	Sequence       int       `json:"sequence,omitempty"`       // Default: 1
-	BAttr          []int     `json:"battr,omitempty"`          // Blocked creative attributes
-	MaxExtended    int       `json:"maxextended,omitempty"`    // Maximum extended video ad duration
-	MinBitrate     int       `json:"minbitrate,omitempty"`     // Minimum bit rate in Kbps
-	MaxBitrate     int       `json:"maxbitrate,omitempty"`     // Maximum bit rate in Kbps
-	BoxingAllowed  *int      `json:"boxingallowed,omitempty"`  // If exchange publisher has rules preventing letter boxing
-	PlaybackMethod []int     `json:"playbackmethod,omitempty"` // List of allowed playback methods
-	Delivery       []int     `json:"delivery,omitempty"`       // List of supported delivery methods
-	Pos            int       `json:"pos,omitempty"`            // Ad Position
-	CompanionAd    []Banner  `json:"companionad,omitempty"`
-	Api            []int     `json:"api,omitempty"` // List of supported API frameworks
-	CompanionType  []int     `json:"companiontype,omitempty"`
-	Placement      int       `json:"placement,omitempty"` // Video placement type
-	Ext            Extension `json:"ext,omitempty"`
+	Mimes          []string `json:"mimes,omitempty"`          // Content MIME types supported.
+	MinDuration    int      `json:"minduration,omitempty"`    // Minimum video ad duration in seconds
+	MaxDuration    int      `json:"maxduration,omitempty"`    // Maximum video ad duration in seconds
+	Protocol       int      `json:"protocol,omitempty"`       // Video bid response protocols DEPRECATED
+	Protocols      []int    `json:"protocols,omitempty"`      // Video bid response protocols
+	W              int      `json:"w,omitempty"`              // Width of the player in pixels
+	H              int      `json:"h,omitempty"`              // Height of the player in pixels
+	StartDelay     int      `json:"startdelay,omitempty"`     // Indicates the start delay in seconds
+	Linearity      int      `json:"linearity,omitempty"`      // Indicates whether the ad impression is linear or non-linear
+	Skip           int      `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
+	SkipMin        int      `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
+	SkipAfter      int      `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
+	Sequence       int      `json:"sequence,omitempty"`       // Default: 1
+	BAttr          []int    `json:"battr,omitempty"`          // Blocked creative attributes
+	MaxExtended    int      `json:"maxextended,omitempty"`    // Maximum extended video ad duration
+	MinBitrate     int      `json:"minbitrate,omitempty"`     // Minimum bit rate in Kbps
+	MaxBitrate     int      `json:"maxbitrate,omitempty"`     // Maximum bit rate in Kbps
+	BoxingAllowed  *int     `json:"boxingallowed,omitempty"`  // If exchange publisher has rules preventing letter boxing
+	PlaybackMethod []int    `json:"playbackmethod,omitempty"` // List of allowed playback methods
+	Delivery       []int    `json:"delivery,omitempty"`       // List of supported delivery methods
+	Pos            int      `json:"pos,omitempty"`            // Ad Position
+	CompanionAd    []Banner `json:"companionad,omitempty"`
+	Api            []int    `json:"api,omitempty"` // List of supported API frameworks
+	CompanionType  []int    `json:"companiontype,omitempty"`
+	Placement      int      `json:"placement,omitempty"` // Video placement type
+	// New params for 2.6
+	MaxSequence  int     `json:"maxseq,omitempty"`       // Indicates the maximum number of ads that may be served into a “dynamic” video ad pod.
+	PodID        string  `json:"podid,omitempty"`        // Unique identifier indicating that an impression opportunity belongs to a video ad pod.
+	PodDuration  int     `json:"poddur,omitempty"`       // Indicates the total amount of time in seconds that advertisers may fill for a “dynamic” video ad pod, or the dynamic portion of a “hybrid” ad pod.
+	PodSequence  int     `json:"podseq,omitempty"`       // The sequence (position) of the video ad pod within a content stream.
+	Rqddurs      int     `json:"rqddurs,omitempty"`      // Indicates the total amount of time in seconds that advertisers may fill for a “dynamic” video ad pod, or the dynamic portion of a “hybrid” ad pod.
+	SlotInPod    int     `json:"slotinpod,omitempty"`    // 0 For video ad pods, this value indicates that the seller can guarantee delivery against the indicated slot position in the pod.
+	MinCPMPerSec float64 `json:"mincpmpersec,omitempty"` // Minimum CPM per second.
+	PlaybackEnd  int     `json:"playbackend,omitempty"`  // The event that causes playback to end.
+
+	Ext Extension `json:"ext,omitempty"`
 }
 
 type jsonVideo Video

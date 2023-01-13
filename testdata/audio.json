@@ -55,5 +55,11 @@
   "companiontype": [
     1,
     2
-  ]
+  ],
+  "podid": "pod_1",
+  "podseq": 1,
+  "slotinpod": 1,
+  "maxseq": 4,
+  "poddur": 60,
+  "mincpmpersec": 0.1
 }
