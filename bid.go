@@ -30,18 +30,24 @@ type Bid struct {
 	CampaignID     StringOrNumber `json:"cid,omitempty"`            // Campaign ID that appears with the Ad markup.
 	CreativeID     string         `json:"crid,omitempty"`           // Creative ID for reporting content issues or defects. This could also be used as a reference to a creative ID that is posted with an exchange.
 	Tactic         string         `json:"tactic,omitempty"`         // Tactic ID to enable buyers to label bids for reporting to the exchange the tactic through which their bid was submitted.
+	CatTax         string         `json:"cattax,omitempty"`         // Default: 1. The taxonomy in use.
 	Cat            []string       `json:"cat,omitempty"`            // IAB content categories of the creative. Refer to List 5.1
 	Attr           []int          `json:"attr,omitempty"`           // Array of creative attributes.
+	APIs           []int          `json:"apis,omitempty"`           // List of supported APIs for the markup.
 	API            int            `json:"api,omitempty"`            // DEPRECATED: API required by the markup if applicable
 	Protocol       int            `json:"protocol,omitempty"`       // Video response protocol of the markup if applicable
 	QAGMediaRating int            `json:"qagmediarating,omitempty"` // Creative media rating per IQG guidelines.
 	Language       string         `json:"language,omitempty"`       // Language of the creative using ISO-639-1-alpha-2.
+	LanguageB      string         `json:"langb,omitempty"`          // Content language using IETF BCP 47.
 	DealID         string         `json:"dealid,omitempty"`         // DealID extension of private marketplace deals
 	H              int            `json:"h,omitempty"`              // Height of the ad in pixels.
 	W              int            `json:"w,omitempty"`              // Width of the ad in pixels.
 	WRatio         int            `json:"wratio,omitempty"`         // Relative width of the creative when expressing size as a ratio.
 	HRatio         int            `json:"hratio,omitempty"`         // Relative height of the creative when expressing size as a ratio.
 	Exp            int            `json:"exp,omitempty"`            // Advisory as to the number of seconds the bidder is willing to wait between the auction and the actual impression.
+	Duration       int            `json:"dur,omitempty"`            // Duration of the video or audio creative in seconds.
+	MType          int            `json:"mtype,omitempty"`          // Type of the creative markup so that it can properly be associated with the right sub-object of the BidRequest.Imp. Values: 1=Banner, 2=Video, 3=Audio, 4=Native.
+	SlotInPod      int            `json:"slotinpod,omitempty"`      // Default: 0. Indicates that the bid response is only eligible for a specific position within a video or audio ad pod.
 	Ext            Extension      `json:"ext,omitempty"`
 }
 
