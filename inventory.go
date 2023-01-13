@@ -5,12 +5,14 @@ type Inventory struct {
 	Name          string     `json:"name,omitempty"`
 	Domain        string     `json:"domain,omitempty"`
 	Cat           []string   `json:"cat,omitempty"`           // Array of IAB content categories
+	CatTax        int        `json:"cattax,omitempty"`        // The taxonomy in use.
 	SectionCat    []string   `json:"sectioncat,omitempty"`    // Array of IAB content categories for subsection
 	PageCat       []string   `json:"pagecat,omitempty"`       // Array of IAB content categories for page
 	PrivacyPolicy *int       `json:"privacypolicy,omitempty"` // Default: 1 ("1": has a privacy policy)
 	Publisher     *Publisher `json:"publisher,omitempty"`     // Details about the Publisher
 	Content       *Content   `json:"content,omitempty"`       // Details about the Content
 	Keywords      string     `json:"keywords,omitempty"`      // Comma separated list of keywords about the site.
+	KWArray       []string   `json:"kwarray,omitempty"`       // Array of keywords about the site. Only one of ‘keywords’ or ‘kwarray’ may be present.
 	Ext           Extension  `json:"ext,omitempty"`
 }
 
