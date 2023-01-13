@@ -202,8 +202,9 @@ type Uid struct {
 }
 
 type Eid struct {
-	Source string `json:"source,omitempty"`
-	Uids   []Uid  `json:"uids,omitempty"`
+	Source string    `json:"source,omitempty"`
+	Uids   []Uid     `json:"uids,omitempty"`
+	Ext    Extension `json:"ext,omitempty"`
 }
 
 /*************************************************************************
@@ -270,11 +271,13 @@ type User struct {
 	YOB        int       `json:"yob,omitempty"`        // DEPRECATED: Year of birth as a 4-digit integer.
 	Gender     string    `json:"gender,omitempty"`     // DEPRECATED: Gender ("M": male, "F" female, "O" Other)
 	Keywords   string    `json:"keywords,omitempty"`   // Comma separated list of keywords, interests, or intent
+	KWArray    []string  `json:"kwarray,omitempty"`    // Array of keywords about the site. Only one of ‘keywords’ or ‘kwarray’ may be present.
 	CustomData string    `json:"customdata,omitempty"` // Optional feature to pass bidder data that was set in the exchange's cookie. The string must be in base85 cookie safe characters and be in any format. Proper JSON encoding must be used to include "escaped" quotation marks.
 	Geo        *Geo      `json:"geo,omitempty"`
 	Data       []Data    `json:"data,omitempty"`
-	Ext        Extension `json:"ext,omitempty"`
+	Consent    string    `json:"consent,omitempty"`
 	Eids       []Eid     `json:"eids,omitempty"`
+	Ext        Extension `json:"ext,omitempty"`
 }
 
 // The data and segment objects together allow additional data about the user to be specified. This data
