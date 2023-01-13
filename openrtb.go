@@ -318,3 +318,14 @@ type Format struct {
 	WMin   int       `json:"wmin,omitempty"`   // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
 	Ext    Extension `json:"ext,omitempty"`
 }
+
+type Network struct {
+	ID     string    `json:"id,omitempty"`     // A unique identifier assigned by the publisher.
+	Name   string    `json:"name,omitempty"`   // Network the content is on (e.g., a TV network like "ABC").
+	Domain string    `json:"domain,omitempty"` // The primary domain of the network (e.g. “abc.com” in the case of the network ABC).
+	Ext    Extension `json:"ext,omitempty"`
+}
+
+type Channel struct {
+	Network
+}
