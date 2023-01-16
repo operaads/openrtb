@@ -17,6 +17,7 @@ type Content struct {
 	ISRC               string         `json:"isrc,omitempty"`               // International Standard Recording Code conforming to ISO - 3901.
 	Producer           *Producer      `json:"producer,omitempty"`           // The producer.
 	URL                string         `json:"url,omitempty"`                // URL of the content, for buy-side contextualization or review.
+	CatTax             int            `json:"cattax,omitempty"`             // The taxonomy in use.
 	Cat                []string       `json:"cat,omitempty"`                // Array of IAB content categories that describe the content.
 	ProdQuality        int            `json:"prodq,omitempty"`              // Production quality per IAB's classification.
 	VideoQuality       int            `json:"videoquality,omitempty"`       // Video quality per IAB's classification.
@@ -25,11 +26,15 @@ type Content struct {
 	UserRating         string         `json:"userrating,omitempty"`         // User rating of the content (e.g., number of stars, likes, etc.).
 	QAGMediaRating     int            `json:"qagmediarating,omitempty"`     // Media rating per QAG guidelines.
 	Keywords           string         `json:"keywords,omitempty"`           // Comma separated list of keywords describing the content.
+	KWArray            []string       `json:"kwarray,omitempty"`            // Array of keywords about the site. Only one of ‘keywords’ or ‘kwarray’ may be present.
 	LiveStream         int            `json:"livestream,omitempty"`         // 0 = not live, 1 = content is live (e.g., stream, live blog).
 	SourceRelationship int            `json:"sourcerelationship,omitempty"` // 0 = indirect, 1 = direct.
 	Len                int            `json:"len,omitempty"`                // Length of content in seconds; appropriate for video or audio.
 	Language           string         `json:"language,omitempty"`           // Content language using ISO-639-1-alpha-2.
+	LanguageB          string         `json:"langb,omitempty"`              // Content language using IETF BCP 47.
 	Embeddable         int            `json:"embeddable,omitempty"`         // Indicator of whether or not the content is embeddable (e.g., an embeddable video player), where 0 = no, 1 = yes.
 	Data               []Data         `json:"data,omitempty"`               // Additional content data.
+	Network            *Network       `json:"network,omitempty"`            // Details about the network the content is on.
+	Channel            *Channel       `json:"channel,omitempty"`            // Details about the channel the content is on.
 	Ext                Extension      `json:"ext,omitempty"`
 }

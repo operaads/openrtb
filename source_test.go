@@ -18,7 +18,18 @@ var _ = Describe("Source", func() {
 			FinalSaleDecision: 1,
 			TransactionID:     "transaction-id",
 			PaymentChain:      "payment-chain",
-			Ext:               Extension("{}"),
+			SupplyChain: &SupplyChain{
+				Ver:      "1.0",
+				Complete: 1,
+				Nodes: []*SupplyChainNode{
+					{
+						Asi: "exchange1.com",
+						Sid: "1234",
+						Hp:  1,
+					},
+				},
+			},
+			Ext: Extension("{}"),
 		}))
 	})
 })

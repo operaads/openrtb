@@ -1,6 +1,7 @@
 {
   "id": "102855",
   "domain": "http://www.usabarfinder.com",
+  "cattax": 1,
   "cat": [
     "IAB3-1"
   ],
@@ -8,6 +9,7 @@
   "publisher": {
     "id": "8953",
     "name": "local.com",
-    "domain": "local.com"
+    "domain": "local.com",
+    "cattax": 1
   }
 }

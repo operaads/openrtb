@@ -1,0 +1,17 @@
+{
+  "browsers": [
+    {
+      "brand": "Chrome",
+      "version": "68.0.2704.79"
+    }
+  ],
+  "platform": {
+    "brand": "iOS",
+    "version": "16.2"
+  },
+  "mobile": 1,
+  "architecture": "ARM",
+  "bitness": "64",
+  "model": "iPhone 13",
+  "source": 3
+}

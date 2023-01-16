@@ -22,6 +22,12 @@ var _ = Describe("Content", func() {
 				Name:   "yahoo",
 				Domain: "www.yahoo.com",
 			},
+			CatTax: 1,
+			Network: &Network{
+				ID:     "abc",
+				Name:   "ABC",
+				Domain: "abc.com",
+			},
 		}))
 	})
 

@@ -202,8 +202,9 @@ type Uid struct {
 }
 
 type Eid struct {
-	Source string `json:"source,omitempty"`
-	Uids   []Uid  `json:"uids,omitempty"`
+	Source string    `json:"source,omitempty"`
+	Uids   []Uid     `json:"uids,omitempty"`
+	Ext    Extension `json:"ext,omitempty"`
 }
 
 /*************************************************************************
@@ -222,7 +223,8 @@ type Eid struct {
 type ThirdParty struct {
 	ID     string    `json:"id,omitempty"`
 	Name   string    `json:"name,omitempty"`
-	Cat    []string  `json:"cat,omitempty"` // Array of IAB content categories
+	CatTax int       `json:"cattax,omitempty"` // The taxonomy in use.
+	Cat    []string  `json:"cat,omitempty"`    // Array of IAB content categories
 	Domain string    `json:"domain,omitempty"`
 	Ext    Extension `json:"ext,omitempty"`
 }
@@ -266,14 +268,16 @@ type User struct {
 	ID         string    `json:"id,omitempty"`         // Unique consumer ID of this user on the exchange
 	BuyerID    string    `json:"buyerid,omitempty"`    // Buyer-specific ID for the user as mapped by the exchange for the buyer. At least one of buyeruid/buyerid or id is recommended. Valid for OpenRTB 2.3.
 	BuyerUID   string    `json:"buyeruid,omitempty"`   // Buyer-specific ID for the user as mapped by the exchange for the buyer. Same as BuyerID but valid for OpenRTB 2.2.
-	YOB        int       `json:"yob,omitempty"`        // Year of birth as a 4-digit integer.
-	Gender     string    `json:"gender,omitempty"`     // Gender ("M": male, "F" female, "O" Other)
+	YOB        int       `json:"yob,omitempty"`        // DEPRECATED: Year of birth as a 4-digit integer.
+	Gender     string    `json:"gender,omitempty"`     // DEPRECATED: Gender ("M": male, "F" female, "O" Other)
 	Keywords   string    `json:"keywords,omitempty"`   // Comma separated list of keywords, interests, or intent
+	KWArray    []string  `json:"kwarray,omitempty"`    // Array of keywords about the site. Only one of ‘keywords’ or ‘kwarray’ may be present.
 	CustomData string    `json:"customdata,omitempty"` // Optional feature to pass bidder data that was set in the exchange's cookie. The string must be in base85 cookie safe characters and be in any format. Proper JSON encoding must be used to include "escaped" quotation marks.
 	Geo        *Geo      `json:"geo,omitempty"`
 	Data       []Data    `json:"data,omitempty"`
-	Ext        Extension `json:"ext,omitempty"`
+	Consent    string    `json:"consent,omitempty"`
 	Eids       []Eid     `json:"eids,omitempty"`
+	Ext        Extension `json:"ext,omitempty"`
 }
 
 // The data and segment objects together allow additional data about the user to be specified. This data
@@ -301,14 +305,30 @@ type Segment struct {
 // coppa flag signals whether or not the request falls under the United States Federal Trade Commission's
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
-	Coppa int       `json:"coppa"` // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
-	Ext   Extension `json:"ext,omitempty"`
+	Coppa     int       `json:"coppa"`                // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
+	GDPR      int       `json:"GDPR,omitempty"`       // Flag that indicates whether or not the request is subject to GDPR regulations 0 = No, 1 = Yes
+	USPrivacy string    `json:"us_privacy,omitempty"` // Communicates signals regarding consumer privacy under US privacy regulation.
+	Ext       Extension `json:"ext,omitempty"`
 }
 
 // This object represents an allowed size (i.e., height and width combination) for a banner impression.
 // These are typically used in an array for an impression where multiple sizes are permitted.
 type Format struct {
-	W   int       `json:"w,omitempty"` // Width in device independent pixels (DIPS).
-	H   int       `json:"h,omitempty"` //Height in device independent pixels (DIPS).
-	Ext Extension `json:"ext,omitempty"`
+	W      int       `json:"w,omitempty"`      // Width in device independent pixels (DIPS).
+	H      int       `json:"h,omitempty"`      // Height in device independent pixels (DIPS).
+	WRatio int       `json:"wratio,omitempty"` // Relative width when expressing size as a ratio.
+	HRatio int       `json:"hratio,omitempty"` // Relative height when expressing size as a ratio.
+	WMin   int       `json:"wmin,omitempty"`   // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
+	Ext    Extension `json:"ext,omitempty"`
+}
+
+type Network struct {
+	ID     string    `json:"id,omitempty"`     // A unique identifier assigned by the publisher.
+	Name   string    `json:"name,omitempty"`   // Network the content is on (e.g., a TV network like "ABC").
+	Domain string    `json:"domain,omitempty"` // The primary domain of the network (e.g. “abc.com” in the case of the network ABC).
+	Ext    Extension `json:"ext,omitempty"`
+}
+
+type Channel struct {
+	Network
 }

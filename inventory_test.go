@@ -20,13 +20,15 @@ var _ = Describe("App", func() {
 	It("should parse correctly", func() {
 		Expect(subject).To(Equal(&App{
 			Inventory: Inventory{
-				ID:   "agltb3B1Yi1pbmNyDAsSA0FwcBiJkfIUDA",
-				Name: "Yahoo Weather",
-				Cat:  []string{"weather", "IAB15", "IAB15-10"},
+				ID:     "agltb3B1Yi1pbmNyDAsSA0FwcBiJkfIUDA",
+				Name:   "Yahoo Weather",
+				CatTax: 1,
+				Cat:    []string{"weather", "IAB15", "IAB15-10"},
 				Publisher: &Publisher{
 					ID:     "agltb3B1Yi1pbmNyDAsSA0FwcBiJkfTUCV",
 					Name:   "yahoo",
 					Domain: "www.yahoo.com",
+					CatTax: 1,
 				},
 			},
 			Bundle:   "628677149",
@@ -54,11 +56,13 @@ var _ = Describe("Site", func() {
 			Inventory: Inventory{
 				ID:     "102855",
 				Cat:    []string{"IAB3-1"},
+				CatTax: 1,
 				Domain: "http://www.usabarfinder.com",
 				Publisher: &Publisher{
 					ID:     "8953",
 					Name:   "local.com",
 					Domain: "local.com",
+					CatTax: 1,
 				},
 			},
 			Page: "http://eas.usabarfinder.com/eas?cu=13824;cre=mu;target=_blank",

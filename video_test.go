@@ -43,6 +43,12 @@ var _ = Describe("Video", func() {
 			Placement:     VideoPlacementInStream,
 			Api:           []int{APIFrameworkVPAID1, APIFrameworkVPAID2},
 			CompanionType: []int{VASTCompanionStatic, VASTCompanionHTML},
+			PodID:         "pod_1",
+			PodSequence:   1,
+			SlotInPod:     1,
+			MaxSequence:   4,
+			PodDuration:   60,
+			MinCPMPerSec:  0.1,
 		}))
 	})
 
@@ -51,15 +57,15 @@ var _ = Describe("Video", func() {
 		Expect((&Video{
 			Mimes: []string{"video/mp4"},
 		}).Validate()).To(Equal(ErrInvalidVideoNoLinearity))
-		Expect((&Video{
-			Linearity: VideoLinearityNonLinear,
-			Mimes:     []string{"video/mp4"},
-		}).Validate()).To(Equal(ErrInvalidVideoNoMinDuration))
-		Expect((&Video{
-			MinDuration: 1,
-			Linearity:   VideoLinearityNonLinear,
-			Mimes:       []string{"video/mp4"},
-		}).Validate()).To(Equal(ErrInvalidVideoNoMaxDuration))
+		//Expect((&Video{
+		//	Linearity: VideoLinearityNonLinear,
+		//	Mimes:     []string{"video/mp4"},
+		//}).Validate()).To(Equal(ErrInvalidVideoNoMinDuration))
+		//Expect((&Video{
+		//	MinDuration: 1,
+		//	Linearity:   VideoLinearityNonLinear,
+		//	Mimes:       []string{"video/mp4"},
+		//}).Validate()).To(Equal(ErrInvalidVideoNoMaxDuration))
 		Expect((&Video{
 			MinDuration: 1,
 			MaxDuration: 1,

@@ -9,11 +9,7 @@ package openrtb
 type Banner struct {
 	W        int       `json:"w,omitempty"`        // Width
 	H        int       `json:"h,omitempty"`        // Height
-	Format   []Format  `json:"format,omitempty"`   //Array of format objects representing the banner sizes permitted.
-	WMax     int       `json:"wmax,omitempty"`     // Width maximum DEPRECATED
-	HMax     int       `json:"hmax,omitempty"`     // Height maximum DEPRECATED
-	WMin     int       `json:"wmin,omitempty"`     // Width minimum DEPRECATED
-	HMin     int       `json:"hmin,omitempty"`     // Height minimum DEPRECATED
+	Format   []Format  `json:"format,omitempty"`   // Array of format objects representing the banner sizes permitted.
 	ID       string    `json:"id,omitempty"`       // A unique identifier
 	BType    []int     `json:"btype,omitempty"`    // Blocked creative types
 	BAttr    []int     `json:"battr,omitempty"`    // Blocked creative attributes
@@ -22,5 +18,6 @@ type Banner struct {
 	TopFrame int       `json:"topframe,omitempty"` // Default: 0 ("1": Delivered in top frame, "0": Elsewhere)
 	ExpDir   []int     `json:"expdir,omitempty"`   // Specify properties for an expandable ad
 	Api      []int     `json:"api,omitempty"`      // List of supported API frameworks
+	Vcm      int       `json:"vcm,omitempty"`      // Relevant only for Banner objects used with a Video object in an array of companion ads. Indicates the companion banner rendering mode relative to the associated video, where 0 = concurrent, 1 = end-card.
 	Ext      Extension `json:"ext,omitempty"`
 }
