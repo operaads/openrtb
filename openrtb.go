@@ -8,6 +8,16 @@ const (
 	BannerTypeFrame     = 4
 )
 
+type VideoPlcmt int
+
+// Video Plcmt Types
+const (
+	VideoPlcmtInStream              VideoPlcmt = 1
+	VideoPlcmtAccompanyingContent   VideoPlcmt = 2
+	VideoPlcmtInterstitial          VideoPlcmt = 3
+	VideoPlcmtNoContentOrStandalone VideoPlcmt = 4
+)
+
 // 5.3 Creative Attributes
 const (
 	CreativeAttributeAudioAdAutoPlay                 = 1
