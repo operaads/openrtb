@@ -12,6 +12,6 @@ type UserAgent struct {
 
 type BrandVersion struct {
 	Brand   string    `json:"brand,omitempty"`   // A brand identifier, for example, “Chrome” or “Windows”.
-	Version string    `json:"version,omitempty"` // g A sequence of version components, in descending hierarchical order (major, minor, micro, …).
+	Version []string  `json:"version,omitempty"` // g A sequence of version components, in descending hierarchical order (major, minor, micro, …).
 	Ext     Extension `json:"ext,omitempty"`
 }
