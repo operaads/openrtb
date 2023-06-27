@@ -29,7 +29,7 @@ type BidRequest struct {
 	AllImps     int          `json:"allimps,omitempty"` // Flag to indicate whether exchange can verify that all impressions offered represent all of the impressions available in context, Default: 0
 	Cur         []string     `json:"cur,omitempty"`     // Array of allowed currencies
 	Bcat        []string     `json:"bcat,omitempty"`    // Blocked Advertiser Categories.
-	CatTax      int          `json:"cattax"`            // The taxonomy in use for bcat.
+	CatTax      int          `json:"cattax,omitempty"`  // The taxonomy in use for bcat.
 	BAdv        []string     `json:"badv,omitempty"`    // Array of strings of blocked toplevel domains of advertisers
 	BApp        []string     `json:"bapp,omitempty"`    // Block list of applications by their platform-specific exchange-independent application identifiers. On Android, these should be bundle or package names (e.g., com.foo.mygame).  On iOS, these are numeric IDs.
 	Source      *Source      `json:"source,omitempty"`  // A Source object that provides data about the inventory source and which entity makes the final decision
