@@ -26,7 +26,7 @@ type Impression struct {
 	DisplayManager    string         `json:"displaymanager,omitempty"`    // Name of ad mediation partner, SDK technology, etc
 	DisplayManagerVer string         `json:"displaymanagerver,omitempty"` // Version of the above
 	Instl             int            `json:"instl"`                       // Interstitial, Default: 0 ("1": Interstitial, "0": Something else)
-	ClickBrowser      *int            `json:"clickbrowser"`                //Indicates the type of browser opened upon clicking the creative in an app, where 0 = embedded, 1 = native. Note that the Safari View Controller in iOS 9.x devices is considered a native browser for purposes of this attribute.
+	ClickBrowser      *int            `json:"clickbrowser,omitempty"`                //Indicates the type of browser opened upon clicking the creative in an app, where 0 = embedded, 1 = native. Note that the Safari View Controller in iOS 9.x devices is considered a native browser for purposes of this attribute.
 	TagID             string         `json:"tagid"`                       // IDentifier for specific ad placement or ad tag
 	BidFloor          float64        `json:"bidfloor,omitempty"`          // Bid floor for this impression in CPM
 	BidFloorCurrency  string         `json:"bidfloorcur,omitempty"`       // Currency of bid floor
