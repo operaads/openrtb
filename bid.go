@@ -30,7 +30,7 @@ type Bid struct {
 	CampaignID     StringOrNumber `json:"cid,omitempty"`            // Campaign ID that appears with the Ad markup.
 	CreativeID     string         `json:"crid,omitempty"`           // Creative ID for reporting content issues or defects. This could also be used as a reference to a creative ID that is posted with an exchange.
 	Tactic         string         `json:"tactic,omitempty"`         // Tactic ID to enable buyers to label bids for reporting to the exchange the tactic through which their bid was submitted.
-	CatTax         string         `json:"cattax,omitempty"`         // Default: 1. The taxonomy in use.
+	CatTax         int            `json:"cattax,omitempty"`         // Default: 1. The taxonomy in use.
 	Cat            []string       `json:"cat,omitempty"`            // IAB content categories of the creative. Refer to List 5.1
 	Attr           []int          `json:"attr,omitempty"`           // Array of creative attributes.
 	APIs           []int          `json:"apis,omitempty"`           // List of supported APIs for the markup.
