@@ -32,7 +32,7 @@ type Bid struct {
 	Tactic         string         `json:"tactic,omitempty"`         // Tactic ID to enable buyers to label bids for reporting to the exchange the tactic through which their bid was submitted.
 	CatTax         int            `json:"cattax,omitempty"`         // Default: 1. The taxonomy in use.
 	Cat            []string       `json:"cat,omitempty"`            // IAB content categories of the creative. Refer to List 5.1
-	Attr           []int          `json:"attr,omitempty"`           // Array of creative attributes.
+	Attr           []int          `json:"attr"`                     // Array of creative attributes.
 	APIs           []int          `json:"apis,omitempty"`           // List of supported APIs for the markup.
 	API            int            `json:"api,omitempty"`            // DEPRECATED: API required by the markup if applicable
 	Protocol       int            `json:"protocol,omitempty"`       // Video response protocol of the markup if applicable
