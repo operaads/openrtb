@@ -24,6 +24,7 @@ type Bid struct {
 	BURL           string         `json:"burl,omitempty"`           // Billing notice URL.
 	LURL           string         `json:"lurl,omitempty"`           // Loss notice URL.
 	AdMarkup       string         `json:"adm,omitempty"`            // Actual ad markup. XHTML if a response to a banner object, or VAST XML if a response to a video object.
+	AdmNative      Extension      `json:"adm_native"`               // ONLY FOR Bidswitch
 	AdvDomain      []string       `json:"adomain,omitempty"`        // Advertiser’s primary or top-level domain for advertiser checking; or multiple if imp rotating.
 	Bundle         string         `json:"bundle,omitempty"`         // A platform-specific application identifier intended to be unique to the app and independent of the exchange.
 	IURL           string         `json:"iurl,omitempty"`           // Sample image URL.

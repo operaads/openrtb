@@ -8,9 +8,10 @@ package openrtb
 // banner and/or video by also including as Imp subordinates the Banner and/or Video objects,
 // respectively. However, any given bid for the impression must conform to one of the offered types.
 type Native struct {
-	Request Extension `json:"request"`         // Request payload complying with the Native Ad Specification.
-	Ver     string    `json:"ver,omitempty"`   // Version of the Native Ad Specification to which request complies; highly recommended for efficient parsing.
-	API     []int     `json:"api,omitempty"`   // List of supported API frameworks for this impression.
-	BAttr   []int     `json:"battr,omitempty"` // Blocked creative attributes
-	Ext     Extension `json:"ext,omitempty"`
+	Request       Extension `json:"request,omitempty"`        // Request payload complying with the Native Ad Specification.
+	RequestNative Extension `json:"request_native,omitempty"` // Only for Bidswitch,replace request field
+	Ver           string    `json:"ver,omitempty"`            // Version of the Native Ad Specification to which request complies; highly recommended for efficient parsing.
+	API           []int     `json:"api,omitempty"`            // List of supported API frameworks for this impression.
+	BAttr         []int     `json:"battr,omitempty"`          // Blocked creative attributes
+	Ext           Extension `json:"ext,omitempty"`
 }
