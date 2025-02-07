@@ -326,13 +326,14 @@ type Regulations struct {
 // This object represents an allowed size (i.e., height and width combination) for a banner impression.
 // These are typically used in an array for an impression where multiple sizes are permitted.
 type Format struct {
-	W      int       `json:"w,omitempty"`      // Width in device independent pixels (DIPS).
-	H      int       `json:"h,omitempty"`      // Height in device independent pixels (DIPS).
-	WRatio int       `json:"wratio,omitempty"` // Relative width when expressing size as a ratio.
-	HRatio int       `json:"hratio,omitempty"` // Relative height when expressing size as a ratio.
-	WMin   int       `json:"wmin,omitempty"`   // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
-	HMin   int       `json:"hmin,omitempty"`   // Only for opera adx, not in openrtb 2.5 spec
-	Ext    Extension `json:"ext,omitempty"`
+	W                   int       `json:"w,omitempty"`      // Width in device independent pixels (DIPS).
+	H                   int       `json:"h,omitempty"`      // Height in device independent pixels (DIPS).
+	WRatio              int       `json:"wratio,omitempty"` // Relative width when expressing size as a ratio.
+	HRatio              int       `json:"hratio,omitempty"` // Relative height when expressing size as a ratio.
+	WMin                int       `json:"wmin,omitempty"`   // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
+	HMin                int       `json:"hmin,omitempty"`   // Only for opera adx, not in openrtb 2.5 spec
+	Ext                 Extension `json:"ext,omitempty"`
+	OperaCreativeFormat string    `json:"-"` // Opera Creative Format
 }
 
 type Network struct {
