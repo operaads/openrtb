@@ -18,12 +18,12 @@ var _ = Describe("UserAgent", func() {
 			Browsers: []*BrandVersion{
 				{
 					Brand:   "Chrome",
-					Version: "68.0.2704.79",
+					Version: []string{"68.0.2704.79"},
 				},
 			},
 			Platform: &BrandVersion{
 				Brand:   "iOS",
-				Version: "16.2",
+				Version: []string{"16.2"},
 			},
 			Mobile:       1,
 			Architecture: "ARM",

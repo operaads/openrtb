@@ -1,5 +1,7 @@
 package openrtb
 
+//go:generate msgp
+
 import "errors"
 
 // Extension is a raw encoded JSON value.
