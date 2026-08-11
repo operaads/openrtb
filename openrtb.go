@@ -316,7 +316,7 @@ type Segment struct {
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
 	Coppa     int       `json:"coppa"`                // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
-	GDPR      int       `json:"GDPR,omitempty"`       // Flag that indicates whether or not the request is subject to GDPR regulations 0 = No, 1 = Yes
+	GDPR      int       `json:"gdpr,omitempty"`       // Flag that indicates whether or not the request is subject to GDPR regulations 0 = No, 1 = Yes
 	USPrivacy string    `json:"us_privacy,omitempty"` // Communicates signals regarding consumer privacy under US privacy regulation.
 	GPP       string    `json:"gpp,omitempty"`        // Contains the Global Privacy Platform's consent string.
 	GPPSid    []int     `json:"gpp_sid,omitempty"`    // Array of the section(s) of the string which should be applied for this transaction.
