@@ -34,7 +34,7 @@ type Audio struct {
 	PodID        string  `json:"podid,omitempty"`        // Unique identifier indicating that an impression opportunity belongs to a video ad pod.
 	PodDuration  int     `json:"poddur,omitempty"`       // Indicates the total amount of time in seconds that advertisers may fill for a “dynamic” video ad pod, or the dynamic portion of a “hybrid” ad pod.
 	PodSequence  int     `json:"podseq,omitempty"`       // The sequence (position) of the video ad pod within a content stream.
-	Rqddurs      int     `json:"rqddurs,omitempty"`      // Indicates the total amount of time in seconds that advertisers may fill for a “dynamic” video ad pod, or the dynamic portion of a “hybrid” ad pod.
+	Rqddurs      []int   `json:"rqddurs,omitempty"`      // Indicates the total amount of time in seconds that advertisers may fill for a “dynamic” video ad pod, or the dynamic portion of a “hybrid” ad pod.
 	SlotInPod    int     `json:"slotinpod,omitempty"`    // 0 For video ad pods, this value indicates that the seller can guarantee delivery against the indicated slot position in the pod.
 	MinCPMPerSec float64 `json:"mincpmpersec,omitempty"` // Minimum CPM per second.
 
